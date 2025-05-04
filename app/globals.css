@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 210 100% 37%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 45 100% 50%;
+    --accent-foreground: 45 100% 20%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 210 100% 37%;
+
+    --radius: 0.5rem;
+    --font-sans: "Inter", sans-serif;
+    --font-heading: "Playfair Display", serif;
+  }
+
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 100% 37%;
+    --primary-foreground: 222 47% 11%;
+
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 45 100% 50%;
+    --accent-foreground: 45 100% 20%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 210 100% 37%;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading;
+  }
+}
+
+@layer components {
+  .container-wide {
+    @apply container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-navy-600 to-gold-500 bg-clip-text text-transparent;
+  }
+
+  /* Simplified hover card gradient effect */
+  .hover-card-gradient {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hover-card-gradient::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: translateX(-200%);
+    transition: transform 1.5s ease-in-out;
+  }
+
+  .hover-card-gradient:hover::before {
+    transform: translateX(200%);
+  }
+
+  .bg-grid {
+    background-size: 40px 40px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+  }
+
+  /* Simplified button shine effect */
+  .btn-shine {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-shine::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.2) 25%,
+      rgba(255, 255, 255, 0.2) 75%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 8s ease-in-out infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+}
