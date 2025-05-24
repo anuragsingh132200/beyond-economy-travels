@@ -17,8 +17,7 @@ const navItems = [
     href: "/services",
     submenu: [
       { name: "Premium Flight Bookings", href: "/services#premium-flight-bookings" },
-      { name: "Points Management", href: "/services#points-management" },
-      { name: "Custom Travel Strategies", href: "/services#custom-travel-strategies" }
+      { name: "Points Management", href: "/services#points-management" }
     ]
   },
   {
@@ -125,12 +124,8 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const menuRef = useRef<HTMLDivElement>(null)
-  const [mounted, setMounted] = useState(false)
-  const isClient = typeof window !== 'undefined'
 
   useEffect(() => {
-    setMounted(true)
-    
     const handleScroll = () => {
       setScrolled(window.scrollY > 10)
     }
@@ -156,32 +151,6 @@ export default function Header() {
     }
   }, [isMenuOpen])
 
-  // Don't render anything on the server to avoid hydration mismatch
-  if (!isClient) {
-    return null;
-  }
-
-  // Only render after component is mounted to avoid hydration mismatch
-  if (!mounted) {
-    return (
-      <header className="fixed top-0 left-0 right-0 z-50 w-full bg-white/90 backdrop-blur-sm">
-        <div className="container mx-auto px-4 flex h-20 items-center justify-between">
-          <Link href="/" className="relative z-50">
-            <div className="relative h-10 w-40">
-              <Image
-                src="/images/beyond-economy-logo.png"
-                alt="Beyond Economy Travels"
-                fill
-                className="object-contain"
-                priority
-              />
-            </div>
-          </Link>
-        </div>
-      </header>
-    );
-  }
-
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 ${
@@ -200,20 +169,18 @@ export default function Header() {
             />
           </div>
         </Link>
-
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-1">
+        <nav className="hidden md:flex items-center space-x-8">
           {navItems.map((item) => (
-            <div key={item.name} className="relative">
-              <NavItem item={item} />
-            </div>
+            <NavItem key={item.name} item={item} />
           ))}
-          <Button className="ml-4" size="sm">
-            Book Now
-          </Button>
         </nav>
-
-        {/* Mobile Menu Button */}
+        <Button
+          variant="outline"
+          className="hidden md:block"
+          asChild
+        >
+          <Link href="/contact">Contact Us</Link>
+        </Button>
         <div className="md:hidden relative" ref={menuRef}>
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -229,8 +196,6 @@ export default function Header() {
               </>
             )}
           </button>
-
-          {/* Mobile Dropdown Menu */}
           <AnimatePresence>
             {isMenuOpen && (
               <motion.div

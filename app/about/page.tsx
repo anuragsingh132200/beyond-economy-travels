@@ -147,7 +147,7 @@ export default function AboutPage() {
               </div>
               <h3 className="text-xl font-bold mb-2">Proven Results</h3>
               <p className="text-muted-foreground">
-                We've helped clients save over $5 million in travel costs while upgrading their travel experience.
+                We've helped clients save over $500K+ in travel costs while upgrading their travel experience.
               </p>
             </AnimatedElement>
             <AnimatedElement
@@ -186,17 +186,10 @@ export default function AboutPage() {
               <h2 className="text-3xl font-bold">Our Team</h2>
               <p className="text-lg text-muted-foreground">
                 Our diverse team brings together expertise from the travel industry, loyalty programs, and customer
-                service to provide you with the best possible experience.
+                service to provide you with the best possible experience.Even one of them was an Ex-Cabin Crew for Qatar Airways
               </p>
               <ul className="space-y-4">
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="h-6 w-6 text-primary mt-0.5" />
-                  <span>Former airline loyalty program managers</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="h-6 w-6 text-primary mt-0.5" />
-                  <span>Certified travel consultants</span>
-                </li>
+                
                 <li className="flex items-start gap-2">
                   <CheckCircle className="h-6 w-6 text-primary mt-0.5" />
                   <span>Points and miles optimization specialists</span>
@@ -208,7 +201,7 @@ export default function AboutPage() {
               </ul>
               <Button className="mt-4 group" asChild>
                 <Link href="/contact">
-                  Meet Our Experts
+                  Contact us
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>

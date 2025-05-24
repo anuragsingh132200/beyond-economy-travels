@@ -50,7 +50,7 @@ export default function ServicesPage() {
             initial="hidden"
             animate="visible"
             variants={staggerContainer}
-            className="grid md:grid-cols-3 gap-8"
+            className="grid md:grid-cols-2 gap-8"
           >
             <motion.div variants={fadeIn}>
               <ServiceCard
@@ -68,14 +68,14 @@ export default function ServicesPage() {
                 link="#points-management"
               />
             </motion.div>
-            <motion.div variants={fadeIn}>
+            {/* <motion.div variants={fadeIn}>
               <ServiceCard
                 icon={<Award className="h-10 w-10 text-primary" />}
                 title="Custom Travel Strategies"
                 description="Tailored travel plans that Maximise your points for premium experiences."
                 link="#custom-travel-strategies"
               />
-            </motion.div>
+            </motion.div> */}
           </motion.div>
         </div>
       </section>
@@ -168,9 +168,7 @@ export default function ServicesPage() {
             >
               <h2 className="text-3xl font-bold">Consulting on Points Management</h2>
               <p className="text-lg text-muted-foreground">
-                I offer expert consulting to help you optimize your loyalty points. Whether you're looking to book
-                luxury flights, secure an upgrade, or just understand how to get the most out of your rewards programs,
-                I can guide you through the entire process.
+                I offer expert consulting to help you optimize your loyalty points. Our team includes former cabin crew members from Qatar Airways who bring invaluable insights into premium travel experiences.
               </p>
               <div className="space-y-4">
                 <h3 className="text-xl font-semibold">What You'll Get:</h3>
@@ -218,7 +216,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section id="custom-travel-strategies" className="py-12 md:py-16 lg:py-20 bg-muted/50" ref={serviceRef3}>
+      {/* <section id="custom-travel-strategies" className="py-12 md:py-16 lg:py-20 bg-muted/50" ref={serviceRef3}>
         <div className="container">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -276,7 +274,7 @@ export default function ServicesPage() {
             </motion.div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="py-12 md:py-16 lg:py-20">
         <div className="container">
@@ -297,9 +295,9 @@ export default function ServicesPage() {
                 <div className="bg-primary/10 text-primary font-bold px-3 py-1 rounded-full inline-block mb-4">
                   Limited Time
                 </div>
-                <h3 className="text-xl font-bold mb-3">Promotional Launch Offer</h3>
+                <h3 className="text-xl font-bold mb-3">Refer a Friend Offer</h3>
                 <p className="text-muted-foreground mb-4">
-                  Enjoy $50 off your first booking when you're one of the first 20 customers to book.
+                  Share your travel experience with friends and earn rewards! Both you and your friend get special discounts on your next bookings.
                 </p>
                 <Link href="/contact" className="text-primary font-medium hover:underline inline-flex items-center">
                   Claim offer <ArrowRight className="ml-1 h-4 w-4" />

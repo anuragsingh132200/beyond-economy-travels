@@ -110,24 +110,6 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-6 text-gold-300">Resources</h3>
             <ul className="space-y-4">
               <li>
-                <Link
-                  href="/resources"
-                  className="text-gray-300 hover:text-gold-300 transition-colors flex items-center"
-                >
-                  Blog
-                  <ArrowUpRight className="ml-1 h-3 w-3" />
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/resources"
-                  className="text-gray-300 hover:text-gold-300 transition-colors flex items-center"
-                >
-                  Points Guides
-                  <ArrowUpRight className="ml-1 h-3 w-3" />
-                </Link>
-              </li>
-              <li>
                 <Link href="/contact" className="text-gray-300 hover:text-gold-300 transition-colors flex items-center">
                   FAQ
                   <ArrowUpRight className="ml-1 h-3 w-3" />

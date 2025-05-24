@@ -104,8 +104,8 @@ export default function Home() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="relative"
           >
-            <div className="relative z-10">
-              <div className="relative h-[500px] w-full rounded-xl overflow-hidden shadow-2xl border-4 border-navy-800">
+            <div className="relative z-10 ">
+              <div className="relative h-[500px]  rounded-xl overflow-hidden shadow-2xl border-4 border-navy-800">
                 <Image
                   src="/images/founder-maddy.jpeg"
                   alt="Maddy, Founder of Beyond Economy Travels"
@@ -157,7 +157,7 @@ export default function Home() {
         <div className="container-wide">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { value: "$500K+", label: "Client savings" },
+              { value: "$500K", label: "Client savings" },
               { value: "300+", label: "Premium flights booked" },
               { value: "100%", label: "Client satisfaction" },
               { value: "26", label: "Countries served" },
@@ -304,7 +304,7 @@ export default function Home() {
               transition={{ duration: 0.6 }}
               className="relative"
             >
-              <div className="relative h-[400px] rounded-xl overflow-hidden shadow-lg">
+              <div className="relative h-[400px]  rounded-xl overflow-hidden shadow-lg">
                 <Image
                   src="/images/business-class-carousel.jpg"
                   alt="Business Class Experience"
@@ -425,10 +425,7 @@ export default function Home() {
                     <Star className="h-5 w-5 text-gold-400" />
                     <span>5-star rated by our clients</span>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <Award className="h-5 w-5 text-gold-400" />
-                    <span>Award-winning points strategies</span>
-                  </div>
+
                 </motion.div>
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -452,54 +449,8 @@ export default function Home() {
               <div className="bg-white p-8 rounded-xl shadow-lg text-foreground">
                 <h3 className="text-xl font-bold mb-6">Book Your Free Consultation</h3>
                 <form className="space-y-4">
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <label htmlFor="first-name" className="text-sm font-medium">
-                        First Name
-                      </label>
-                      <input id="first-name" className="w-full px-3 py-2 border rounded-lg" placeholder="John" />
-                    </div>
-                    <div className="space-y-2">
-                      <label htmlFor="last-name" className="text-sm font-medium">
-                        Last Name
-                      </label>
-                      <input id="last-name" className="w-full px-3 py-2 border rounded-lg" placeholder="Doe" />
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="email" className="text-sm font-medium">
-                      Email
-                    </label>
-                    <input
-                      id="email"
-                      type="email"
-                      className="w-full px-3 py-2 border rounded-lg"
-                      placeholder="john.doe@example.com"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="phone" className="text-sm font-medium">
-                      Phone
-                    </label>
-                    <input
-                      id="phone"
-                      type="tel"
-                      className="w-full px-3 py-2 border rounded-lg"
-                      placeholder="+614 (555) 000-0000"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="message" className="text-sm font-medium">
-                      How can we help?
-                    </label>
-                    <textarea
-                      id="message"
-                      className="w-full px-3 py-2 border rounded-lg h-24"
-                      placeholder="Tell us about your travel goals..."
-                    />
-                  </div>
                   <Button variant="gold" className="w-full btn-shine">
-                    Submit Request
+                    Book a Call
                   </Button>
                   <p className="text-xs text-center text-muted-foreground mt-4">
                     By submitting this form, you agree to our{" "}
