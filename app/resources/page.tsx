@@ -24,7 +24,7 @@ export default function ResourcesPage() {
   const blogPosts = [
     {
       id: 1,
-      title: "10 Ways to Maximize Your Credit Card Points for Business Class Travel",
+      title: "10 Ways to Maximise Your Credit Card Points for Business Class Travel",
       excerpt:
         "Learn the insider strategies for turning everyday spending into premium cabin experiences with these expert tips.",
       image:
@@ -33,7 +33,7 @@ export default function ResourcesPage() {
       author: "Jessica Chen",
       readTime: "8 min read",
       category: "Points Strategy",
-      slug: "maximize-credit-card-points",
+      slug: "Maximise-credit-card-points",
       featured: true,
     },
     {
@@ -64,9 +64,9 @@ export default function ResourcesPage() {
     },
     {
       id: 4,
-      title: "The Best Credit Cards for Travel Points in 2023",
+      title: "The Best Credit Cards for points in 2023",
       excerpt:
-        "Our annual roundup of the top credit cards for travelers looking to maximize their points earning potential.",
+        "Our annual roundup of the top credit cards for travelers looking to Maximise their points earning potential.",
       image:
         "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
       date: "February 28, 2023",
@@ -114,19 +114,7 @@ export default function ResourcesPage() {
       category: "Airlines",
       slug: "singapore-airlines-business-class-review",
     },
-    {
-      id: 8,
-      title: "How to Book Round-the-World Tickets Using Points",
-      excerpt:
-        "Round-the-world tickets offer incredible value for points enthusiasts. Learn how to book these complex itineraries and see multiple destinations for a fraction of the cost.",
-      image:
-        "https://images.unsplash.com/photo-1521727857535-28d2047619b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-      date: "October 7, 2022",
-      author: "Jessica Chen",
-      readTime: "16 min read",
-      category: "Points Strategy",
-      slug: "round-the-world-tickets-guide",
-    },
+    
     {
       id: 9,
       title: "Luxury for Less: Top 5 Destinations for Premium Travel Value",
@@ -153,7 +141,7 @@ export default function ResourcesPage() {
     <main className="flex-1">
       <PageHeader
         title="Travel Resources & Insights"
-        description="Expert guides, tips, and strategies to maximize your travel points"
+        description="Expert guides, tips, and strategies to Maximise your points"
       />
 
       {/* Featured Post */}
@@ -296,17 +284,10 @@ export default function ResourcesPage() {
             </div>
           )}
 
-          {filteredPosts.length > 0 && (
-            <div className="mt-12 text-center">
-              <Button variant="outline-navy" size="lg">
-                Load More Articles
-              </Button>
-            </div>
-          )}
         </div>
       </section>
 
-      <section className="py-12 md:py-16 lg:py-20 bg-navy-50">
+      {/* <section className="py-12 md:py-16 lg:py-20 bg-navy-50">
         <div className="container-wide">
           <AnimatedElement animation="fadeIn" className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Free Points Travel Guides</h2>
@@ -365,7 +346,7 @@ export default function ResourcesPage() {
             </AnimatedElement>
           </AnimatedElement>
         </div>
-      </section>
+      </section> */}
 
       <section className="py-12 md:py-16 lg:py-20">
         <div className="container-wide">

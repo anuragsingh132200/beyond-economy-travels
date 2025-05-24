@@ -71,24 +71,24 @@ export default function PricingPage() {
                     </thead>
                     <tbody>
                       <tr className="border-b">
-                        <td className="py-3">1 Adult</td>
+                        <td className="py-3">1 Passenger</td>
                         <td className="text-center py-3">$450</td>
                         <td className="text-center py-3">$600</td>
                       </tr>
                       <tr className="border-b">
-                        <td className="py-3">2 Adults</td>
+                        <td className="py-3">2 Passengers</td>
                         <td className="text-center py-3">$750</td>
                         <td className="text-center py-3">$1000</td>
                       </tr>
                       <tr className="border-b">
-                        <td className="py-3">3 Adults</td>
+                        <td className="py-3">3 Passengers</td>
                         <td className="text-center py-3">$700</td>
                         <td className="text-center py-3">$1400</td>
                       </tr>
-                      <tr>
-                        <td className="py-3">Child (Under 12)</td>
-                        <td className="text-center py-3">$150</td>
-                        <td className="text-center py-3">$300</td>
+                      <tr className="border-b">
+                        <td className="py-3">4 Passengers</td>
+                        <td className="text-center py-3">$900</td>
+                        <td className="text-center py-3">$1800</td>
                       </tr>
                     </tbody>
                   </table>
@@ -108,24 +108,19 @@ export default function PricingPage() {
                     </thead>
                     <tbody>
                       <tr className="border-b">
-                        <td className="py-3">1 Adult</td>
+                        <td className="py-3">1 Passenger</td>
                         <td className="text-center py-3">$450</td>
                         <td className="text-center py-3">$900</td>
                       </tr>
                       <tr className="border-b">
-                        <td className="py-3">2 Adults</td>
+                        <td className="py-3">2 Passengers</td>
                         <td className="text-center py-3">$750</td>
                         <td className="text-center py-3">$1500</td>
                       </tr>
                       <tr className="border-b">
-                        <td className="py-3">3 Adults</td>
+                        <td className="py-3">3 Passengers</td>
                         <td className="text-center py-3">$1000</td>
                         <td className="text-center py-3">$2000</td>
-                      </tr>
-                      <tr>
-                        <td className="py-3">Child (Under 12)</td>
-                        <td className="text-center py-3">$225</td>
-                        <td className="text-center py-3">$450</td>
                       </tr>
                     </tbody>
                   </table>
@@ -156,7 +151,7 @@ export default function PricingPage() {
 
             <motion.div variants={fadeIn} className="text-center">
               <p className="text-lg mb-6">
-                Ready to fly in style? Contact us via the form or on Instagram @beyondeconomytravels.
+                Please Contact us via the form or on Instagram @beyondeconomytravels.
               </p>
               <Link href="/contact">
                 <Button size="lg">

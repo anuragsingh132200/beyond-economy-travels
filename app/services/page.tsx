@@ -41,7 +41,7 @@ export default function ServicesPage() {
     <main className="flex-1">
       <PageHeader
         title="Our Services"
-        description="Premium solutions to maximize your travel points and elevate your journey"
+        description="Premium solutions to Maximise your points and elevate your journey"
       />
 
       <section className="py-12 md:py-16 lg:py-20">
@@ -72,7 +72,7 @@ export default function ServicesPage() {
               <ServiceCard
                 icon={<Award className="h-10 w-10 text-primary" />}
                 title="Custom Travel Strategies"
-                description="Tailored travel plans that maximize your points for premium experiences."
+                description="Tailored travel plans that Maximise your points for premium experiences."
                 link="#custom-travel-strategies"
               />
             </motion.div>
@@ -117,7 +117,7 @@ export default function ServicesPage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="h-6 w-6 text-primary mt-0.5" />
-                    <span>Maximized point redemptions for business and first-class flights</span>
+                    <span>Maximised point redemptions for business and first-class flights</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="h-6 w-6 text-primary mt-0.5" />
@@ -126,10 +126,16 @@ export default function ServicesPage() {
                 </ul>
               </div>
               <div className="bg-white p-4 rounded-lg border border-primary/20">
-                <h3 className="text-lg font-semibold mb-2">Pricing:</h3>
-                <p className="mb-2">Pricing is per person: $300 for one-way Business Class bookings.</p>
-                <p className="mb-2">Kids' tickets are priced the same as adults.</p>
-                <p>First Class pricing available upon request.</p>
+                <h3 className="text-lg font-semibold mb-2">Business Class Pricing (One Way):</h3>
+                <ul className="space-y-2 mb-4">
+                  <li>1 Passenger: $300</li>
+                  <li>2 Passengers: $500</li>
+                  <li>3 Passengers: $700</li>
+                  <li>4 Passengers: $900</li>
+                </ul>
+                <p className="text-sm text-muted-foreground mb-4">
+                  First Class pricing available upon request.
+                </p>
                 <div className="mt-4 pt-4 border-t border-gray-200">
                   <p className="font-medium">$100 Non-Refundable Search Fee:</p>
                   <p>
@@ -237,7 +243,7 @@ export default function ServicesPage() {
               <h2 className="text-3xl font-bold">Custom Travel Strategies</h2>
               <p className="text-lg text-muted-foreground">
                 No two trips are the same. Whether you're planning a honeymoon, a business trip, or a family vacation,
-                I'll craft a custom travel strategy that maximizes your points and gets you the best value for your
+                I'll craft a custom travel strategy that Maximises your points and gets you the best value for your
                 money.
               </p>
               <div className="space-y-4">

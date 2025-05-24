@@ -69,17 +69,7 @@ export default function TestimonialsPage() {
                 className="bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-shadow"
               >
                 <div className="flex items-center gap-4 mb-4">
-                  <Image
-                    src={
-                      testimonial.image ||
-                      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80"
-                    }
-                    alt={testimonial.name}
-                    width={60}
-                    height={60}
-                    className="rounded-full"
-                    unoptimized
-                  />
+                  
                   <div>
                     <h3 className="font-bold">{testimonial.name}</h3>
                     <p className="text-sm text-muted-foreground">{testimonial.location || testimonial.role}</p>

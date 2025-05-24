@@ -17,7 +17,7 @@ export default function Footer() {
               />
             </div>
             <p className="text-gray-300 max-w-xs">
-              Transforming your travel points into unforgettable luxury experiences without the premium price tag.
+              Transforming your points into unforgettable luxury experiences without the premium price tag.
             </p>
             <div className="flex space-x-4">
               <Link

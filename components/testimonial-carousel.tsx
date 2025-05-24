@@ -78,13 +78,7 @@ export default function TestimonialCarousel() {
             <div className="flex flex-col items-center text-center">
               <Quote className="h-12 w-12 text-gold-300 mb-6" />
               <div className="mb-6">
-                <Image
-                  src={testimonials[current].image || "/placeholder.svg"}
-                  alt={testimonials[current].name}
-                  width={80}
-                  height={80}
-                  className="rounded-full border-4 border-navy-50"
-                />
+                
               </div>
               <div className="flex mb-4">
                 {[...Array(testimonials[current].rating)].map((_, i) => (

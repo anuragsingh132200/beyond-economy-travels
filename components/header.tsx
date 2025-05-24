@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button"
 const navItems = [
   {
     name: "Home",
-    href: "/",
+    href: "/"
   },
   {
     name: "Services",
@@ -18,62 +18,153 @@ const navItems = [
     submenu: [
       { name: "Premium Flight Bookings", href: "/services#premium-flight-bookings" },
       { name: "Points Management", href: "/services#points-management" },
-      { name: "Custom Travel Strategies", href: "/services#custom-travel-strategies" },
-    ],
+      { name: "Custom Travel Strategies", href: "/services#custom-travel-strategies" }
+    ]
   },
   {
     name: "Pricing",
-    href: "/pricing",
+    href: "/pricing"
   },
   {
     name: "About",
-    href: "/about",
+    href: "/about"
   },
   {
     name: "Testimonials",
-    href: "/testimonials",
+    href: "/testimonials"
   },
   {
     name: "Resources",
-    href: "/resources",
-  },
+    href: "/resources"
+  }
 ]
 
-export default function Header() {
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
-  const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null)
-  const [mounted, setMounted] = useState(false)
+const NavItem = ({ item, isMobile = false, onItemClick }: { item: any, isMobile?: boolean, onItemClick?: () => void }) => {
+  const [isOpen, setIsOpen] = useState(false)
+  const ref = useRef<HTMLDivElement>(null)
 
-  // Handle client-side only code
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (ref.current && !ref.current.contains(event.target as Node)) {
+        setIsOpen(false)
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [])
+
+  if (item.submenu) {
+    return (
+      <div className="relative" ref={ref}>
+        <button
+          onClick={() => {
+            setIsOpen(!isOpen)
+            if (isMobile) onItemClick?.()
+          }}
+          className={`flex items-center justify-between w-full px-4 py-2 text-sm ${
+            isMobile ? 'text-gray-700 hover:bg-gray-100' : 'text-gray-700 hover:text-primary'
+          }`}
+        >
+          <span>{item.name}</span>
+          <ChevronDown
+            className={`ml-2 h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`}
+          />
+        </button>
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.2 }}
+              className={`${
+                isMobile ? 'pl-4' : 'absolute left-0 mt-1 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50'
+              }`}
+            >
+              <div className="py-1">
+                {item.submenu.map((subItem: any) => (
+                  <Link
+                    key={subItem.name}
+                    href={subItem.href}
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    onClick={() => {
+                      setIsOpen(false)
+                      if (isMobile) onItemClick?.()
+                    }}
+                  >
+                    {subItem.name}
+                  </Link>
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    )
+  }
+
+  return (
+    <Link
+      href={item.href}
+      className={`block px-4 py-2 text-sm ${
+        isMobile ? 'text-gray-700 hover:bg-gray-100' : 'text-gray-700 hover:text-primary'
+      }`}
+      onClick={() => {
+        if (isMobile) onItemClick?.()
+      }}
+    >
+      {item.name}
+    </Link>
+  )
+}
+
+export default function Header() {
+  const [scrolled, setScrolled] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const menuRef = useRef<HTMLDivElement>(null)
+  const [mounted, setMounted] = useState(false)
+  const isClient = typeof window !== 'undefined'
+
   useEffect(() => {
     setMounted(true)
     
-    // Handle scroll events only after mounting
     const handleScroll = () => {
       setScrolled(window.scrollY > 10)
     }
 
     window.addEventListener("scroll", handleScroll)
-    handleScroll() // Check initial scroll position
+    handleScroll()
     
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  // Handle body scroll lock when drawer is open
   useEffect(() => {
-    if (!mounted) return
-    
-    document.body.style.overflow = isDrawerOpen ? 'hidden' : 'unset'
-    return () => {
-      document.body.style.overflow = 'unset'
+    function handleClickOutside(event: MouseEvent) {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsMenuOpen(false)
+      }
     }
-  }, [isDrawerOpen, mounted])
 
-  // Return a simpler initial state during SSR
+    if (isMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside)
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [isMenuOpen])
+
+  // Don't render anything on the server to avoid hydration mismatch
+  if (!isClient) {
+    return null;
+  }
+
+  // Only render after component is mounted to avoid hydration mismatch
   if (!mounted) {
     return (
-      <header className="fixed top-0 left-0 right-0 z-50 w-full">
+      <header className="fixed top-0 left-0 right-0 z-50 w-full bg-white/90 backdrop-blur-sm">
         <div className="container mx-auto px-4 flex h-20 items-center justify-between">
           <Link href="/" className="relative z-50">
             <div className="relative h-10 w-40">
@@ -88,13 +179,13 @@ export default function Header() {
           </Link>
         </div>
       </header>
-    )
+    );
   }
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 ${
-        scrolled ? "bg-white/95 backdrop-blur-md shadow-sm" : "bg-transparent"
+        scrolled ? "bg-white/95 backdrop-blur-md shadow-sm" : "bg-white/90 backdrop-blur-sm"
       }`}
     >
       <div className="container mx-auto px-4 flex h-20 items-center justify-between">
@@ -110,132 +201,65 @@ export default function Header() {
           </div>
         </Link>
 
-        {/* Menu Toggle Button - Always visible on all screen sizes */}
-        <button
-          className="relative z-50 p-2 hover:bg-gray-100 rounded-md transition-colors flex items-center gap-2"
-          onClick={() => setIsDrawerOpen(!isDrawerOpen)}
-          aria-label={isDrawerOpen ? "Close menu" : "Open menu"}
-        >
-          {!isDrawerOpen && <span className="text-sm font-medium mr-1">Menu</span>}
-          {isDrawerOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center space-x-1">
+          {navItems.map((item) => (
+            <div key={item.name} className="relative">
+              <NavItem item={item} />
+            </div>
+          ))}
+          <Button className="ml-4" size="sm">
+            Book Now
+          </Button>
+        </nav>
 
-        {/* Side Drawer Navigation */}
-        <AnimatePresence>
-          {isDrawerOpen && (
-            <>
-              {/* Backdrop */}
+        {/* Mobile Menu Button */}
+        <div className="md:hidden relative" ref={menuRef}>
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="p-2 hover:bg-gray-100 rounded-md transition-colors flex items-center gap-1"
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          >
+            {isMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <>
+                <span className="text-sm font-medium">Menu</span>
+                <Menu className="h-5 w-5" />
+              </>
+            )}
+          </button>
+
+          {/* Mobile Dropdown Menu */}
+          <AnimatePresence>
+            {isMenuOpen && (
               <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 10 }}
                 transition={{ duration: 0.2 }}
-                className="fixed inset-0 z-40 bg-black/20 backdrop-blur-sm"
-                onClick={() => setIsDrawerOpen(false)}
-              />
-              
-              {/* Drawer Panel */}
-              <motion.div
-                initial={{ x: "100%" }}
-                animate={{ x: 0 }}
-                exit={{ x: "100%" }}
-                transition={{ type: "tween", duration: 0.3 }}
-                className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-sm bg-white shadow-xl flex flex-col"
+                className="absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50 py-1"
               >
-                {/* Drawer Header */}
-                <div className="flex items-center justify-between p-4 border-b">
-                  <div className="relative h-8 w-32">
-                    <Image
-                      src="/images/beyond-economy-logo.png"
-                      alt="Beyond Economy Travels"
-                      fill
-                      className="object-contain"
-                      priority
+                {navItems.map((item) => (
+                  <div key={item.name} className="border-b border-gray-100 last:border-b-0">
+                    <NavItem 
+                      item={item} 
+                      isMobile 
+                      onItemClick={() => setIsMenuOpen(false)} 
                     />
                   </div>
-                  <button
-                    onClick={() => setIsDrawerOpen(false)}
-                    className="p-2 hover:bg-gray-100 rounded-full transition-colors"
-                    aria-label="Close menu"
-                  >
-                    <X className="h-5 w-5" />
-                  </button>
-                </div>
-                
-                {/* Navigation Items */}
-                <div className="flex-1 overflow-y-auto">
-                  <nav className="py-4">
-                    {navItems.map((item) => (
-                      <div key={item.name} className="px-4">
-                        {item.submenu ? (
-                          <div>
-                            <button
-                              onClick={() => setActiveSubmenu(activeSubmenu === item.name ? null : item.name)}
-                              className="flex items-center justify-between w-full py-4 text-base font-medium border-b border-gray-100 hover:bg-gray-50 transition-colors"
-                            >
-                              {item.name}
-                              <ChevronRight
-                                className={`h-5 w-5 transition-transform duration-300 ${
-                                  activeSubmenu === item.name ? "rotate-90" : ""
-                                }`}
-                              />
-                            </button>
-
-                            <AnimatePresence>
-                              {activeSubmenu === item.name && (
-                                <motion.div
-                                  initial={{ height: 0, opacity: 0 }}
-                                  animate={{ height: "auto", opacity: 1 }}
-                                  exit={{ height: 0, opacity: 0 }}
-                                  transition={{ duration: 0.2 }}
-                                  className="overflow-hidden bg-gray-50 rounded-md ml-2 my-1"
-                                >
-                                  {item.submenu.map((subItem) => (
-                                    <Link
-                                      key={subItem.name}
-                                      href={subItem.href}
-                                      className="block px-6 py-3 text-sm hover:bg-gray-100 transition-colors text-gray-600"
-                                      onClick={() => {
-                                        setIsDrawerOpen(false)
-                                        setActiveSubmenu(null)
-                                      }}
-                                    >
-                                      {subItem.name}
-                                    </Link>
-                                  ))}
-                                </motion.div>
-                              )}
-                            </AnimatePresence>
-                          </div>
-                        ) : (
-                          <Link
-                            href={item.href}
-                            className="block w-full py-4 text-base font-medium border-b border-gray-100 hover:bg-gray-50 transition-colors"
-                            onClick={() => setIsDrawerOpen(false)}
-                          >
-                            {item.name}
-                          </Link>
-                        )}
-                      </div>
-                    ))}
-                  </nav>
-                </div>
-                
-                {/* Drawer Footer with CTA */}
-                <div className="p-4 border-t">
-                  <Button asChild variant="gold" className="w-full">
-                    <Link 
-                      href="/contact" 
-                      onClick={() => setIsDrawerOpen(false)}
-                    >
+                ))}
+                <div className="px-4 py-3 border-t border-gray-100">
+                  <Button asChild className="w-full" size="sm">
+                    <Link href="/contact" onClick={() => setIsMenuOpen(false)}>
                       Contact Us
                     </Link>
                   </Button>
                 </div>
               </motion.div>
-            </>
-          )}
-        </AnimatePresence>
+            )}
+          </AnimatePresence>
+        </div>
       </div>
     </header>
   )

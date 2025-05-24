@@ -1,3 +1,5 @@
+'use client';
+
 import Image from "next/image"
 import Link from "next/link"
 import { Mail, Phone, MapPin, Clock, ArrowRight } from "lucide-react"
@@ -9,72 +11,71 @@ export default function ContactPage() {
     <main className="flex-1">
       <PageHeader title="Contact Us" description="Get in touch with our points travel experts" />
 
-      <section className="py-12 md:py-16 lg:py-20">
-        <div className="container">
-          <div className="grid md:grid-cols-2 gap-12">
-            <div>
+      <section className="py-12 md:py-16 lg:py-20 flex items-center justify-center min-h-[calc(100vh-200px)]">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="w-full">
               <h2 className="text-3xl font-bold mb-6">Get in Touch</h2>
               <p className="text-lg text-muted-foreground mb-8">
                 Have questions about our services or ready to start your points travel journey? Our team of experts is
                 here to help.
               </p>
 
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="bg-primary/10 p-3 rounded-full">
-                    <Mail className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-lg">Email Us</h3>
-                    <p className="text-muted-foreground mb-1">For general inquiries:</p>
-                    <Link href="mailto:info@beyondeconomy.com" className="text-primary hover:underline">
-                      info@beyondeconomy.com
-                    </Link>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="bg-primary/10 p-3 rounded-full">
-                    <Phone className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-lg">Call Us</h3>
-                    <p className="text-muted-foreground mb-1">Monday to Friday, 9am-5pm EST:</p>
-                    <Link href="tel:+18005551234" className="text-primary hover:underline">
-                      +1 (800) 555-1234
-                    </Link>
+              <div className="grid gap-8 max-w-3xl">
+                {/* Email Card */}
+                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300">
+                  <div className="flex items-start gap-4">
+                    <div className="bg-primary/10 p-3 rounded-xl">
+                      <Mail className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-xl text-gray-900 mb-1">Email Us</h3>
+                      <p className="text-muted-foreground mb-3">For general inquiries and support</p>
+                      <Link 
+                        href="mailto:info@beyondeconomy.com?subject=Inquiry from Beyond Economy Travels" 
+                        className="inline-flex items-center text-primary hover:text-primary/80 font-medium transition-colors"
+                      >
+                        info@beyondeconomy.com
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
+                    </div>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
-                  <div className="bg-primary/10 p-3 rounded-full">
-                    <MapPin className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-lg">Visit Us</h3>
-                    <p className="text-muted-foreground">
-                      123 Travel Plaza, Suite 400
-                      <br />
-                      New York, NY 10001
-                      <br />
-                      United States
-                    </p>
+                {/* Phone Card */}
+                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300">
+                  <div className="flex items-start gap-4">
+                    <div className="bg-primary/10 p-3 rounded-xl">
+                      <Phone className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-xl text-gray-900 mb-1">Call Us</h3>
+                      <Link 
+                        href="tel:+61481821245" 
+                        className="inline-flex items-center text-primary hover:text-primary/80 font-medium transition-colors"
+                      >
+                        +61481821245
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
+                    </div>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
-                  <div className="bg-primary/10 p-3 rounded-full">
-                    <Clock className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-lg">Business Hours</h3>
-                    <p className="text-muted-foreground">
-                      Monday - Friday: 9:00 AM - 5:00 PM EST
-                      <br />
-                      Saturday: 10:00 AM - 2:00 PM EST
-                      <br />
-                      Sunday: Closed
-                    </p>
+                {/* Hours Card */}
+                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300">
+                  <div className="flex items-start gap-4">
+                    <div className="bg-primary/10 p-3 rounded-xl">
+                      <Clock className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-xl text-gray-900 mb-3">Business Hours</h3>
+                      <div className="space-y-2 text-muted-foreground">
+                        <div className="flex items-center gap-2">
+                          <span className="inline-block w-36 font-medium">All Days</span>
+                          <span>9:00 AM - 9:00 PM</span>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -114,77 +115,6 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="bg-white p-8 rounded-lg shadow-lg">
-              <h3 className="text-xl font-bold mb-6">Send Us a Message</h3>
-              <form className="space-y-4">
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <label htmlFor="first-name" className="text-sm font-medium">
-                      First Name
-                    </label>
-                    <input id="first-name" className="w-full px-3 py-2 border rounded-md" placeholder="John" />
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="last-name" className="text-sm font-medium">
-                      Last Name
-                    </label>
-                    <input id="last-name" className="w-full px-3 py-2 border rounded-md" placeholder="Doe" />
-                  </div>
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-medium">
-                    Email
-                  </label>
-                  <input
-                    id="email"
-                    type="email"
-                    className="w-full px-3 py-2 border rounded-md"
-                    placeholder="john.doe@example.com"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="phone" className="text-sm font-medium">
-                    Phone
-                  </label>
-                  <input
-                    id="phone"
-                    type="tel"
-                    className="w-full px-3 py-2 border rounded-md"
-                    placeholder="+1 (555) 000-0000"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="subject" className="text-sm font-medium">
-                    Subject
-                  </label>
-                  <select id="subject" className="w-full px-3 py-2 border rounded-md">
-                    <option value="">Select a subject</option>
-                    <option value="general">General Inquiry</option>
-                    <option value="consultation">Book a Consultation</option>
-                    <option value="membership">Membership Information</option>
-                    <option value="support">Customer Support</option>
-                  </select>
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="message" className="text-sm font-medium">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    className="w-full px-3 py-2 border rounded-md h-32"
-                    placeholder="How can we help you?"
-                  />
-                </div>
-                <Button className="w-full">Send Message</Button>
-                <p className="text-xs text-center text-muted-foreground mt-4">
-                  By submitting this form, you agree to our{" "}
-                  <Link href="#" className="underline hover:text-primary">
-                    Privacy Policy
-                  </Link>
-                  .
-                </p>
-              </form>
-            </div>
           </div>
         </div>
       </section>

@@ -59,7 +59,7 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-lg md:text-xl text-gray-300"
             >
-              Transform your travel points into unforgettable luxury experiences with our expert guidance and
+              Transform your points into unforgettable luxury experiences with our expert guidance and
               strategies.
             </motion.p>
 
@@ -83,20 +83,9 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="flex items-center gap-4"
             >
-              <div className="flex -space-x-2">
-                {[1, 2, 3].map((i) => (
-                  <div key={i} className="h-10 w-10 rounded-full border-2 border-navy-800 bg-navy-700 overflow-hidden">
-                    <Image
-                      src={`/placeholder.svg?height=40&width=40&text=${i}`}
-                      alt={`Client ${i}`}
-                      width={40}
-                      height={40}
-                    />
-                  </div>
-                ))}
-              </div>
+              
               <div className="text-sm">
-                <span className="font-medium">500+ happy clients</span>
+                <span className="font-medium">100+ happy clients</span>
                 <div className="flex items-center text-gold-400">
                   <Star className="h-3 w-3 fill-gold-400" />
                   <Star className="h-3 w-3 fill-gold-400" />
@@ -168,10 +157,10 @@ export default function Home() {
         <div className="container-wide">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { value: "$8.5M+", label: "Client savings" },
-              { value: "3,500+", label: "Premium flights booked" },
-              { value: "98%", label: "Client satisfaction" },
-              { value: "42", label: "Countries served" },
+              { value: "$500K+", label: "Client savings" },
+              { value: "300+", label: "Premium flights booked" },
+              { value: "100%", label: "Client satisfaction" },
+              { value: "26", label: "Countries served" },
             ].map((stat, index) => (
               <motion.div
                 key={index}
@@ -218,7 +207,7 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-lg text-muted-foreground max-w-2xl mx-auto"
             >
-              Maximize your travel points and experience luxury travel without the premium price tag.
+              Maximise your points and experience luxury travel without the premium price tag.
             </motion.p>
           </div>
 
@@ -232,7 +221,7 @@ export default function Home() {
             <ServiceCard
               icon={<Award className="h-8 w-8 text-navy-600" />}
               title="First Class Experiences"
-              description="Elevate your journey with first-class bookings that maximize comfort and luxury."
+              description="Elevate your journey with first-class bookings that Maximise comfort and luxury."
               link="/services#premium-flight-bookings"
             />
             <ServiceCard
@@ -390,31 +379,7 @@ export default function Home() {
       </section>
 
       {/* Featured In Section */}
-      <section className="section-padding bg-navy-900 text-white">
-        <div className="container-wide">
-          <div className="text-center mb-12">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="text-3xl md:text-4xl font-bold mb-4"
-            >
-              As Featured In
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-lg text-gray-300 max-w-2xl mx-auto"
-            >
-              Our expertise has been recognized by leading travel and financial publications.
-            </motion.p>
-          </div>
-          <MediaFeatures />
-        </div>
-      </section>
+      
 
       {/* CTA Section */}
       <section className="section-padding">
@@ -442,7 +407,7 @@ export default function Home() {
                   transition={{ duration: 0.5, delay: 0.1 }}
                   className="text-lg text-gray-300"
                 >
-                  Schedule a consultation with our points travel experts and discover how you can maximize your points
+                  Schedule a consultation with our points travel experts and discover how you can Maximise your points
                   for premium travel experiences.
                 </motion.p>
                 <motion.div
@@ -520,7 +485,7 @@ export default function Home() {
                       id="phone"
                       type="tel"
                       className="w-full px-3 py-2 border rounded-lg"
-                      placeholder="+1 (555) 000-0000"
+                      placeholder="+614 (555) 000-0000"
                     />
                   </div>
                   <div className="space-y-2">

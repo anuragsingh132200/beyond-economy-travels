@@ -11,7 +11,7 @@ import AnimatedElement from "@/components/animated-element"
 const blogPosts = [
   {
     id: 1,
-    title: "10 Ways to Maximize Your Credit Card Points for Business Class Travel",
+    title: "10 Ways to Maximise Your Credit Card Points for Business Class Travel",
     excerpt:
       "Learn the insider strategies for turning everyday spending into premium cabin experiences with these expert tips.",
     image:
@@ -24,12 +24,12 @@ const blogPosts = [
       "Jessica is a points expert with over 10 years of experience in the travel industry. She has helped hundreds of clients book premium travel experiences using points.",
     readTime: "8 min read",
     category: "Points Strategy",
-    slug: "maximize-credit-card-points",
+    slug: "Maximise-credit-card-points",
     content: `
       <h2>Introduction</h2>
       <p>Credit card points are one of the most powerful tools for accessing premium travel experiences without paying premium prices. With the right strategy, you can turn your everyday spending into business class flights that would otherwise cost thousands of dollars.</p>
       
-      <p>In this comprehensive guide, we'll explore ten proven strategies to maximize your credit card points specifically for business class travel. These techniques have helped our clients save millions of dollars collectively on premium cabin bookings.</p>
+      <p>In this comprehensive guide, we'll explore ten proven strategies to Maximise your credit card points specifically for business class travel. These techniques have helped our clients save millions of dollars collectively on premium cabin bookings.</p>
       
       <h2>1. Choose the Right Credit Cards</h2>
       <p>Not all credit cards are created equal when it comes to earning travel rewards. Cards that earn transferable points (like Chase Ultimate Rewards, American Express Membership Rewards, or Capital One Venture miles) offer the most flexibility and typically provide the best value for business class redemptions.</p>
@@ -45,7 +45,7 @@ const blogPosts = [
       <h2>2. Strategically Time Your Applications</h2>
       <p>Credit card sign-up bonuses are the fastest way to accumulate large quantities of points. However, timing is crucial. Wait for elevated bonus offers before applying, as these can sometimes be 20-30% higher than the standard offer.</p>
       
-      <p>Additionally, be mindful of application rules like Chase's 5/24 rule or American Express's once-per-lifetime bonus policy. Planning your applications strategically can help you maximize the total bonuses you receive.</p>
+      <p>Additionally, be mindful of application rules like Chase's 5/24 rule or American Express's once-per-lifetime bonus policy. Planning your applications strategically can help you Maximise the total bonuses you receive.</p>
       
       <h2>3. Leverage Category Bonuses</h2>
       <p>Most rewards credit cards offer bonus points for spending in specific categories. By aligning your spending with these categories, you can significantly increase your points earning rate.</p>
@@ -73,7 +73,7 @@ const blogPosts = [
       <p>Additionally, award availability tends to be better during these periods, increasing your chances of finding business class seats on your preferred routes.</p>
       
       <h2>7. Look for Sweet Spot Redemptions</h2>
-      <p>Each airline's award chart has "sweet spots" where the points required for certain routes offer exceptional value. Identifying and targeting these sweet spots can help you maximize the value of your points.</p>
+      <p>Each airline's award chart has "sweet spots" where the points required for certain routes offer exceptional value. Identifying and targeting these sweet spots can help you Maximise the value of your points.</p>
       
       <p>For example, using ANA miles (transferable from American Express) to book round-trip business class to Europe or Japan often requires fewer points than other programs for the same routes.</p>
       
@@ -116,9 +116,9 @@ const blogPosts = [
   },
   {
     id: 4,
-    title: "The Best Credit Cards for Travel Points in 2023",
+    title: "The Best Credit Cards for points in 2023",
     excerpt:
-      "Our annual roundup of the top credit cards for travelers looking to maximize their points earning potential.",
+      "Our annual roundup of the top credit cards for travelers looking to Maximise their points earning potential.",
     image:
       "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     date: "February 28, 2023",
