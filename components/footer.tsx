@@ -8,9 +8,9 @@ export default function Footer() {
       <div className="container-wide">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div className="space-y-6">
-            <div className="relative h-10 w-40">
+            <div className="relative h-32 w-40">
               <Image
-                src="/images/beyond-economy-logo.png"
+                src="/images/image.png"
                 alt="Beyond Economy Travels"
                 fill
                 className="object-contain brightness-0 invert"
