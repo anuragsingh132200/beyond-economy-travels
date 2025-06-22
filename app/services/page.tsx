@@ -1,6 +1,7 @@
 "use client"
 
 import { useRef } from "react"
+import { useRouter } from "next/navigation"
 import Image from "next/image"
 import Link from "next/link"
 import { motion, useInView } from "framer-motion"
@@ -10,6 +11,7 @@ import PageHeader from "@/components/page-header"
 import ServiceCard from "@/components/service-card"
 
 export default function ServicesPage() {
+  const router = useRouter()
   // Animation variants
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
@@ -192,7 +194,7 @@ export default function ServicesPage() {
                 <p>$100 for a 30-minute consulting session (prepayment required).</p>
               </div>
               <div className="pt-4">
-                <Button>
+                <Button onClick={() => router.push('/consultation')}>
                   Book a Consultation
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>

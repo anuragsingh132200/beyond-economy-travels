@@ -68,12 +68,38 @@ export default function ConsultationForm() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl p-8">
-        <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-gray-900">Book a Consultation</h1>
-          <p className="mt-2 text-gray-600">Fill out the form below to schedule your consultation</p>
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto">
+        <div className="text-center mb-12">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Schedule Your Free Consultation</h1>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">Let's plan your perfect travel experience together</p>
+          
+          {/* Action Buttons */}
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
+            <a 
+              href="/consultation"
+              className="px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors duration-200 shadow-md hover:shadow-lg"
+            >
+              Book a Call
+            </a>
+            <a 
+              href="/consultation"
+              className="px-6 py-3 bg-white text-blue-600 border-2 border-blue-600 font-medium rounded-lg hover:bg-blue-50 transition-colors duration-200 shadow-md hover:shadow-lg"
+            >
+              Schedule Now
+            </a>
+            <a 
+              href="#contact-us"
+              className="px-6 py-3 bg-white text-gray-800 border-2 border-gray-300 font-medium rounded-lg hover:bg-gray-50 transition-colors duration-200 shadow-md hover:shadow-lg"
+            >
+              Contact Us
+            </a>
+          </div>
         </div>
+
+        <div id="book-consultation" className="bg-white rounded-xl shadow-lg overflow-hidden p-8 mb-12">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">Book Your Consultation</h2>
+          <p className="text-gray-600 text-center mb-8">Fill out the form below and we'll get back to you within 24 hours</p>
 
         {error && (
           <div className="mb-6 p-4 bg-red-50 text-red-700 rounded-md">
@@ -184,13 +210,14 @@ export default function ConsultationForm() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className={`w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+                className={`w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-200 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
               >
                 {isSubmitting ? 'Booking...' : 'Book Consultation'}
               </button>
             </div>
           </form>
         )}
+        </div>
       </div>
     </div>
   );

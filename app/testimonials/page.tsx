@@ -1,10 +1,13 @@
 "use client"
 import Image from "next/image"
+import { useRouter } from "next/navigation"
 import { Star, Quote } from "lucide-react"
 import PageHeader from "@/components/page-header"
 import AnimatedElement from "@/components/animated-element"
 
 export default function TestimonialsPage() {
+  const router = useRouter()
+  
   const testimonials = [
     {
       id: 1,
@@ -125,15 +128,15 @@ export default function TestimonialsPage() {
               <p className="text-muted-foreground">Client savings</p>
             </AnimatedElement>
             <AnimatedElement animation="fadeIn" className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-primary mb-2">3,500+</div>
+              <div className="text-4xl md:text-5xl font-bold text-primary mb-2">300+</div>
               <p className="text-muted-foreground">Premium flights booked</p>
             </AnimatedElement>
             <AnimatedElement animation="fadeIn" className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-primary mb-2">98%</div>
+              <div className="text-4xl md:text-5xl font-bold text-primary mb-2">100%</div>
               <p className="text-muted-foreground">Client satisfaction</p>
             </AnimatedElement>
             <AnimatedElement animation="fadeIn" className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-primary mb-2">42</div>
+              <div className="text-4xl md:text-5xl font-bold text-primary mb-2">26</div>
               <p className="text-muted-foreground">Countries served</p>
             </AnimatedElement>
           </AnimatedElement>
@@ -239,7 +242,7 @@ export default function TestimonialsPage() {
               Join our satisfied clients and experience premium travel without the premium price tag.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <button className="bg-white text-primary px-6 py-3 rounded-md font-medium hover:bg-white/90 transition-colors">
+              <button className="bg-white text-primary px-6 py-3 rounded-md font-medium hover:bg-white/90 transition-colors" onClick={() => router.push('/consultation')}>
                 Book a Consultation
               </button>
               <button className="bg-transparent border border-white px-6 py-3 rounded-md font-medium hover:bg-white/10 transition-colors">

@@ -66,7 +66,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-gray-300 hover:text-gold-300 transition-colors flex items-center">
+                <Link href="/consultation" className="text-gray-300 hover:text-gold-300 transition-colors flex items-center">
                   Book a Consultation
                   <ArrowUpRight className="ml-1 h-3 w-3" />
                 </Link>

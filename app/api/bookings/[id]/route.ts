@@ -9,8 +9,17 @@ export async function PATCH(
   request: Request,
   { params }: { params: { id: string } }
 ) {
+  // Ensure params is awaited before using its properties
+  const { id } = await Promise.resolve(params);
   try {
     const { status } = await request.json();
+    
+    if (!ObjectId.isValid(id)) {
+      return NextResponse.json(
+        { error: 'Invalid consultation ID' },
+        { status: 400 }
+      );
+    }
     
     if (!['pending', 'confirmed', 'cancelled'].includes(status)) {
       return NextResponse.json(
@@ -23,7 +32,7 @@ export async function PATCH(
     const db = client.db(dbName);
     
     const result = await db.collection(collectionName).updateOne(
-      { _id: new ObjectId(params.id) },
+      { _id: new ObjectId(id) },
       { $set: { status } }
     );
     
@@ -50,12 +59,21 @@ export async function DELETE(
   request: Request,
   { params }: { params: { id: string } }
 ) {
+  // Ensure params is awaited before using its properties
+  const { id } = await Promise.resolve(params);
+  
+  if (!ObjectId.isValid(id)) {
+    return NextResponse.json(
+      { error: 'Invalid consultation ID' },
+      { status: 400 }
+    );
+  }
   try {
     const client = await MongoClient.connect(uri);
     const db = client.db(dbName);
     
     const result = await db.collection(collectionName).deleteOne({
-      _id: new ObjectId(params.id)
+      _id: new ObjectId(id)
     });
     
     await client.close();

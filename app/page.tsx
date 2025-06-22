@@ -1,5 +1,6 @@
 "use client"
 
+import { useRouter } from "next/navigation"
 import Link from "next/link"
 import Image from "next/image"
 import { motion } from "framer-motion"
@@ -11,6 +12,7 @@ import MediaFeatures from "@/components/media-features"
 import ServiceCard from "@/components/service-card"
 
 export default function Home() {
+  const router = useRouter()
   return (
     <>
       {/* Hero Section */}
@@ -70,7 +72,7 @@ export default function Home() {
               className="flex flex-col sm:flex-row gap-4 pt-4"
             >
               <Button size="lg" variant="gold" asChild className="btn-shine">
-                <Link href="/contact">Book a Consultation</Link>
+                <Link href="/consultation">Book a Consultation</Link>
               </Button>
               <Button size="lg" variant="outline-gold" asChild>
                 <Link href="/services">Explore Services</Link>
@@ -286,7 +288,7 @@ export default function Home() {
                           <Plane className="h-6 w-6 text-navy-600" />
                         </div>
                         <div className="ml-4">
-                          <h3 className="text-lg font-semibold text-gray-900">3,500+</h3>
+                          <h3 className="text-lg font-semibold text-gray-900">300+</h3>
                           <p className="text-gray-600">Premium Flights Booked</p>
                         </div>
                       </div>
@@ -452,7 +454,7 @@ export default function Home() {
               <div className="bg-white p-8 rounded-xl shadow-lg text-foreground">
                 <h3 className="text-xl font-bold mb-6">Book Your Free Consultation</h3>
                 <form className="space-y-4">
-                  <Button variant="gold" className="w-full btn-shine">
+                  <Button variant="gold" className="w-full btn-shine" onClick={() => router.push('/consultation')}>
                     Book a Call
                   </Button>
                   <p className="text-xs text-center text-muted-foreground mt-4">

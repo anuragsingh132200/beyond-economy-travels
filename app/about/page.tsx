@@ -240,7 +240,7 @@ export default function AboutPage() {
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Button size="lg" variant="secondary" asChild>
-                <Link href="/contact">Book a Consultation</Link>
+                <Link href="/consultation">Book a Consultation</Link>
               </Button>
               <Button
                 size="lg"

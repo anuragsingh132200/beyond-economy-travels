@@ -3,10 +3,12 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Mail, Phone, MapPin, Clock, ArrowRight } from "lucide-react"
+import { useRouter } from 'next/navigation'
 import { Button } from "@/components/ui/button"
 import PageHeader from "@/components/page-header"
 
 export default function ContactPage() {
+  const router = useRouter()
   return (
     <main className="flex-1">
       <PageHeader title="Contact Us" description="Get in touch with our points travel experts" />
@@ -170,7 +172,7 @@ export default function ContactPage() {
                   </li>
                 </ul>
               </div>
-              <Button className="mt-4">
+              <Button className="mt-4" onClick={() => router.push('/consultation')}>
                 Schedule Now
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
