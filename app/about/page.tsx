@@ -66,7 +66,7 @@ export default function AboutPage() {
                   <Link href="/contact">Contact Me</Link>
                 </Button>
                 <Button variant="outline" size="lg" asChild>
-                  <Link href="https://instagram.com/BeyondEconomyTravels" target="_blank">
+                  <Link href="https://instagram.com/Beyond_Economy_Travels" target="_blank">
                     <Instagram className="mr-2 h-4 w-4" />
                     Follow on Instagram
                   </Link>
