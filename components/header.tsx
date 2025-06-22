@@ -33,8 +33,8 @@ const navItems = [
     href: "/testimonials"
   },
   {
-    name: "Resources",
-    href: "/resources"
+    name: "FAQ",
+    href: "/faq"
   }
 ]
 

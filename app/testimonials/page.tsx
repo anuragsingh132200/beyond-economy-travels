@@ -121,7 +121,7 @@ export default function TestimonialsPage() {
           </AnimatedElement>
           <AnimatedElement animation="stagger" className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <AnimatedElement animation="fadeIn" className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-primary mb-2">$8.5M+</div>
+              <div className="text-4xl md:text-5xl font-bold text-primary mb-2">$500K+</div>
               <p className="text-muted-foreground">Client savings</p>
             </AnimatedElement>
             <AnimatedElement animation="fadeIn" className="text-center">
@@ -155,7 +155,7 @@ export default function TestimonialsPage() {
                 <div className="grid md:grid-cols-2 gap-8">
                   <div>
                     <Image
-                      src="/images/business-class-suite.jpg"
+                      src="/images/WhatsApp Image 2025-05-27 at 20.21.06_0ace5a33.jpg"
                       alt="Business Class Suite"
                       width={500}
                       height={300}
@@ -217,7 +217,7 @@ export default function TestimonialsPage() {
                   </div>
                   <div className="order-1 md:order-2">
                     <Image
-                      src="/images/business-class-dining.jpg"
+                      src="/images/WhatsApp Image 2025-05-27 at 20.21.05_41eed4f8.jpg"
                       alt="Business Class Dining"
                       width={500}
                       height={300}

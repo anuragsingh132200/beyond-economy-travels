@@ -113,8 +113,10 @@ export default function ContactPage() {
                   </Link>
                 </div>
               </div>
+              <div className="mt-8 pt-6 border-t border-gray-200 text-center text-sm text-muted-foreground">
+                <p>Beyond Economy Travels | ABN 21 496 617 907 | Melbourne, Australia</p>
+              </div>
             </div>
-
           </div>
         </div>
       </section>
@@ -172,11 +174,11 @@ export default function ContactPage() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <Image
-                src="/images/luxury-bar.png"
+                src="/images/WhatsApp Image 2025-05-27 at 20.21.04_92e65559.jpg"
                 alt="Schedule a call"
                 width={600}
                 height={600}
-                className="rounded-lg shadow-lg"
+                className="rounded-lg shadow-lg object-cover"
               />
             </div>
             <div className="space-y-6">

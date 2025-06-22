@@ -22,7 +22,7 @@ export default function AboutPage() {
             <AnimatedElement animation="slideInLeft" className="relative">
               <div className="relative h-[500px] w-full rounded-lg overflow-hidden shadow-xl">
                 <Image
-                  src="/images/founder-maddy.jpeg"
+                  src="/images/WhatsApp Image 2025-05-27 at 20.21.06_3509896e.jpg"
                   alt="Maddy, Founder of Beyond Economy Travels"
                   fill
                   className="object-cover"
@@ -58,7 +58,8 @@ export default function AboutPage() {
               <p className="text-lg text-muted-foreground">
                 As an aviation enthusiast and points expert, I've built a reputation for delivering quality travel
                 solutions. I've helped numerous clients book luxury flights, and now I'm ready to help you do the same.
-                Reach out to me to start your custom travel strategy and experience the luxury travel you deserve.
+                I live in the beautiful city of Melbourne, Australia — so if you're an Aussie, you're in great hands! I'll work with you to craft the perfect travel experience, maximizing your points to
+                ensure you travel in style without breaking the bank.
               </p>
               <div className="pt-4 flex flex-wrap gap-4">
                 <Button size="lg" asChild>
@@ -80,7 +81,7 @@ export default function AboutPage() {
       <section className="py-12 md:py-16 lg:py-20 bg-muted/50 relative overflow-hidden">
         <div className="absolute inset-0 opacity-5">
           <Image
-            src="https://images.unsplash.com/photo-1589519160732-57fc498494f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2560&q=80"
+            src="/images/dotted-blue-map.png"
             alt="World Map"
             fill
             className="object-cover opacity-10"
@@ -209,7 +210,7 @@ export default function AboutPage() {
             <AnimatedElement animation="slideInRight" className="order-1 md:order-2">
               <div className="relative">
                 <Image
-                  src="/images/business-class-amenity.jpg"
+                  src="/images/WhatsApp Image 2025-05-27 at 20.21.12_5f83fa9a.jpg"
                   alt="Business Class Amenities"
                   width={600}
                   height={400}
@@ -251,6 +252,15 @@ export default function AboutPage() {
               </Button>
             </div>
           </AnimatedElement>
+        </div>
+      </section>
+
+      {/* Company Information */}
+      <section className="py-8 bg-muted/30">
+        <div className="container-wide">
+          <div className="text-center text-sm text-muted-foreground">
+            <p>Beyond Economy Travels | ABN 21 496 617 907 | Melbourne, Australia</p>
+          </div>
         </div>
       </section>
     </main>

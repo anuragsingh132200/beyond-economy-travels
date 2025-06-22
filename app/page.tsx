@@ -3,7 +3,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { motion } from "framer-motion"
-import { ArrowRight, Star, Award, Globe, Plane, Instagram } from "lucide-react"
+import { ArrowRight, Star, Award, Globe, Plane, Instagram, MessageSquare } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import TestimonialCarousel from "@/components/testimonial-carousel"
@@ -107,19 +107,12 @@ export default function Home() {
             <div className="relative z-10 ">
               <div className="relative h-[500px]  rounded-xl overflow-hidden shadow-2xl border-4 border-navy-800">
                 <Image
-                  src="/images/founder-maddy.jpeg"
+                  src="/images/WhatsApp Image 2025-05-27 at 20.21.04_92e65559.jpg"
                   alt="Maddy, Founder of Beyond Economy Travels"
                   fill
                   className="object-cover"
                   priority
                 />
-              </div>
-
-              <div className="absolute -bottom-6 -right-6 bg-white p-4 rounded-xl shadow-lg max-w-xs">
-                <p className="font-bold">Meet Maddy</p>
-                <p className="text-sm text-muted-foreground">
-                  Points expert helping you fly business class without breaking the bank
-                </p>
               </div>
             </div>
 
@@ -244,90 +237,100 @@ export default function Home() {
       </section>
 
       {/* About Founder Section */}
-      <section className="section-padding p-10">
-        <div className="container-wide">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="space-y-6"
-            >
-              <div className="inline-block rounded-full bg-navy-600/10 px-4 py-1.5 text-sm font-medium text-navy-600 mb-2">
-                About Me
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold">Hi, I'm Maddy</h2>
-              <p className="text-lg text-muted-foreground">
-                I specialize in helping travelers unlock luxury travel experiences without paying full price. I've spent
-                years mastering the art of points redemption and miles management to help you fly business and
-                first-class using your loyalty points.
-              </p>
-              <p className="text-lg text-muted-foreground">
-                At Beyond Economy Travels, my goal is simple: to help you make the most of your rewards programs and get
-                you into the premium cabins of your dreams.
-              </p>
-              <div className="space-y-4 pt-2">
-                <div className="flex items-start gap-3 p-4 bg-navy-50 rounded-xl">
-                  <div className="bg-navy-600/10 p-2 rounded-full">
-                    <Award className="h-5 w-5 text-navy-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold">Points Expert</h3>
-                    <p className="text-muted-foreground">Years of experience maximizing travel rewards</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3 p-4 bg-navy-50 rounded-xl">
-                  <div className="bg-navy-600/10 p-2 rounded-full">
-                    <Plane className="h-5 w-5 text-navy-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold">Aviation Enthusiast</h3>
-                    <p className="text-muted-foreground">Passionate about premium travel experiences</p>
-                  </div>
-                </div>
-              </div>
-              <div className="pt-4">
-                <Button asChild variant="navy">
-                  <Link href="/about" className="group">
-                    Learn More About Me
-                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </Link>
-                </Button>
-              </div>
-            </motion.div>
+      <section className="py-20 bg-gradient-to-b from-white to-navy-50">
+        <div className="container-wide px-4 sm:px-6 lg:px-8">
+          <div className="relative max-w-7xl mx-auto">
+            <div className="relative">
+              <div className="lg:grid lg:grid-cols-12 lg:gap-12 items-center">
+                <motion.div 
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8 }}
+                  className="lg:col-span-7"
+                >
+                  <div className="space-y-6">
+                    <div className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-navy-100 text-navy-800 mb-4">
+                      <span className="flex h-3 w-3 relative mr-2">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-navy-400 opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-3 w-3 bg-navy-600"></span>
+                      </span>
+                      Your Personal Travel Strategist
+                    </div>
+                    
+                    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+                      Meet Maddy - <span className="text-navy-600">Your Premium Travel Expert</span>
+                    </h2>
+                    
+                    <div className="prose prose-lg text-gray-600 space-y-4">
+                      <p>
+                        With over a decade of experience in luxury travel planning and points optimization, I've helped thousands of travelers experience the world in comfort and style without breaking the bank.
+                      </p>
+                      <p>
+                        My journey began when I discovered the power of travel rewards, and since then, I've made it my mission to help others unlock the same life-changing experiences.
+                      </p>
+                    </div>
 
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="relative"
-            >
-              <div className="relative h-[400px]  rounded-xl overflow-hidden shadow-lg">
-                <Image
-                  src="/images/business-class-carousel.jpg"
-                  alt="Business Class Experience"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="absolute -bottom-6 -left-6 bg-navy-600 text-white p-4 rounded-xl shadow-lg">
-                <div className="flex items-center gap-2">
-                  <Star className="h-5 w-5 fill-gold-400 text-gold-400" />
-                  <span className="font-bold">Helped clients save over $8.5M</span>
-                </div>
-              </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
+                      <div className="flex items-start p-5 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                        <div className="flex-shrink-0 bg-navy-100 p-3 rounded-lg">
+                          <Award className="h-6 w-6 text-navy-600" />
+                        </div>
+                        <div className="ml-4">
+                          <h3 className="text-lg font-semibold text-gray-900">$500K+</h3>
+                          <p className="text-gray-600">In Client Savings</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start p-5 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                        <div className="flex-shrink-0 bg-navy-100 p-3 rounded-lg">
+                          <Plane className="h-6 w-6 text-navy-600" />
+                        </div>
+                        <div className="ml-4">
+                          <h3 className="text-lg font-semibold text-gray-900">3,500+</h3>
+                          <p className="text-gray-600">Premium Flights Booked</p>
+                        </div>
+                      </div>
+                    </div>
 
-              {/* Decorative element */}
-              <div className="absolute -top-12 -right-12 w-24 h-24">
-                <div className="bg-navy-100 rounded-full w-24 h-24 flex items-center justify-center animate-float">
-                  <div className="bg-navy-200 rounded-full w-16 h-16 flex items-center justify-center">
-                    <div className="bg-navy-300 rounded-full w-8 h-8"></div>
+                    <div className="pt-4 flex flex-col sm:flex-row gap-4">
+                      <Button asChild size="lg" variant="navy" className="group w-full sm:w-auto">
+                        <Link href="/about" className="text-center">
+                          My Story
+                          <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                        </Link>
+                      </Button>
+                      <Button asChild size="lg" variant="outline" className="w-full sm:w-auto">
+                        <Link href="/contact" className="flex items-center justify-center">
+                          <MessageSquare className="mr-2 h-4 w-4" />
+                          Let's Talk
+                        </Link>
+                      </Button>
+                    </div>
                   </div>
-                </div>
+                </motion.div>
+
+                <motion.div 
+                  initial={{ opacity: 0, x: 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  className="mt-12 lg:mt-0 lg:col-span-5"
+                >
+                  <div className="relative">
+                    <div className="relative rounded-2xl overflow-hidden aspect-[3/4] shadow-xl">
+                      <Image
+                        src="/images/WhatsApp Image 2025-05-27 at 20.21.13_008935eb.jpg"
+                        alt="Maddy - Travel Expert"
+                        fill
+                        className="object-cover"
+                        priority
+                      />
+                    </div>
+                  
+                  </div>
+                </motion.div>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>

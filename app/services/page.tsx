@@ -89,7 +89,7 @@ export default function ServicesPage() {
               transition={{ duration: 0.6 }}
             >
               <Image
-                src="/images/business-class-suite.jpg"
+                src="/images/WhatsApp Image 2025-05-27 at 20.21.06_0ace5a33.jpg"
                 alt="Business Class Experience"
                 width={600}
                 height={400}
@@ -205,7 +205,7 @@ export default function ServicesPage() {
               className="order-1 md:order-2"
             >
               <Image
-                src="/images/economy-flex.jpg"
+                src="/images/WhatsApp Image 2025-05-27 at 20.21.04_a59738c6.jpg"
                 alt="Economy Class Experience"
                 width={600}
                 height={400}
