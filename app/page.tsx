@@ -454,12 +454,12 @@ export default function Home() {
               <div className="bg-white p-8 rounded-xl shadow-lg text-foreground">
                 <h3 className="text-xl font-bold mb-6">Book Your Free Consultation</h3>
                 <form className="space-y-4">
-                  <Button variant="gold" className="w-full btn-shine" onClick={() => router.push('/consultation')}>
-                    Book a Call
+                  <Button variant="gold" className="w-full btn-shine" asChild>
+                    <Link href="/consultation">Book a Call</Link>
                   </Button>
                   <p className="text-xs text-center text-muted-foreground mt-4">
                     By submitting this form, you agree to our{" "}
-                    <Link href="#" className="underline hover:text-navy-600">
+                    <Link href="/privacy" className="underline hover:text-navy-600">
                       Privacy Policy
                     </Link>
                     .
