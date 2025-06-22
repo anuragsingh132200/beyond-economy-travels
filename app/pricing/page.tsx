@@ -72,12 +72,12 @@ export default function PricingPage() {
                     <tbody>
                       <tr className="border-b">
                         <td className="py-3">1 Passenger</td>
-                        <td className="text-center py-3">$450</td>
+                        <td className="text-center py-3">$300</td>
                         <td className="text-center py-3">$600</td>
                       </tr>
                       <tr className="border-b">
                         <td className="py-3">2 Passengers</td>
-                        <td className="text-center py-3">$750</td>
+                        <td className="text-center py-3">$500</td>
                         <td className="text-center py-3">$1000</td>
                       </tr>
                       <tr className="border-b">
